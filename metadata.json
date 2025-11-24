@@ -1,0 +1,5 @@
+{
+  "name": "PromptMaster AI",
+  "description": "Una aplicación sencilla para perfeccionar y optimizar prompts para varios modelos de IA como Gemini, ChatGPT, Midjourney y más.",
+  "requestFramePermissions": []
+}
