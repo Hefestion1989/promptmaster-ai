@@ -2,7 +2,7 @@
 
 Una aplicación web moderna y minimalista diseñada para perfeccionar prompts para Inteligencia Artificial. Utiliza **Gemini 2.5** para transformar ideas simples en instrucciones de ingeniería de prompts de nivel experto.
 
-![UI Preview](https://via.placeholder.com/800x400.png?text=PromptMaster+UI+Preview)
+[![UI Preview](https://via.placeholder.com/800x400.png?text=PromptMaster+UI+Preview)](https://promptmaster-ai-457768093192.us-west1.run.app/)
 
 ## ✨ Características
 
