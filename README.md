@@ -1,47 +1,57 @@
-# PromptMaster AI 🪄
+# PromptMaster AI
 
-Una aplicación web moderna y minimalista diseñada para perfeccionar prompts para Inteligencia Artificial. Utiliza **Gemini 2.5** para transformar ideas simples en instrucciones de ingeniería de prompts de nivel experto.
+Aplicacion web para perfeccionar prompts con asistencia de IA. Toma ideas simples y las transforma en instrucciones mas claras, especificas y reutilizables para distintos modelos.
 
-[![UI Preview](https://via.placeholder.com/800x400.png?text=PromptMaster+UI+Preview)](https://promptmaster-ai-457768093192.us-west1.run.app/)
+## Demo
 
-## ✨ Características
+[promptmaster-ai-457768093192.us-west1.run.app](https://promptmaster-ai-457768093192.us-west1.run.app/)
 
-- **Optimización Multi-Modelo:** Prompts específicos para ChatGPT, Gemini, Claude, Midjourney, DALL-E y Copilot.
-- **UI "Obsidian & Teal":** Diseño oscuro, limpio y profesional.
-- **Explicación de Cambios:** Entiende *por qué* la IA mejoró tu prompt.
-- **Tips Personalizados:** Recibe consejos tácticos para el modelo seleccionado.
+## Proposito
 
-## 🚀 Cómo usar este código
+PromptMaster AI es la version mas completa del taller de prompts: usa React, Vite y Gemini para generar mejoras, explicar cambios y ofrecer consejos tacticos segun el modelo elegido.
 
-Si descargaste este repositorio y quieres correrlo en tu máquina:
+Para una version estatica, offline y sin API key, mira [`Prompts Workshop`](https://github.com/Hefestion1989/Prompts).
 
-1.  **Instalar dependencias:**
-    Abre una terminal en la carpeta y ejecuta:
-    ```bash
-    npm install
-    ```
+## Caracteristicas
 
-2.  **Configurar la API Key:**
-    Esta app requiere una API Key de Google Gemini.
-    *   Crea un archivo llamado `.env` en la raíz del proyecto.
-    *   Agrega tu clave así:
-        ```env
-        API_KEY=tu_clave_de_google_aistudio_aqui
-        ```
+- Optimizacion multi-modelo para ChatGPT, Gemini, Claude, Midjourney, DALL-E y Copilot.
+- Mejora guiada de prompts a partir de objetivo, tono, audiencia y formato esperado.
+- Explicacion de cambios para entender que se mejoro y por que.
+- Interfaz oscura, minimalista y orientada al uso rapido.
 
-3.  **Correr la app:**
-    ```bash
-    npm run dev
-    ```
-    Abre el link que aparece (usualmente `http://localhost:5173`).
+## Estado del proyecto
 
-## ⚠️ Nota de Seguridad
+Experimental. Pensado como producto personal y pieza de portfolio para explorar interfaces de IA aplicadas a escritura de prompts.
 
-Nunca subas tu archivo `.env` a GitHub. Este repositorio ya incluye un archivo `.gitignore` para prevenirlo, pero siempre verifica que tu clave no sea pública.
-
-## 🛠️ Tecnologías
+## Tecnologias
 
 - React + Vite
 - Tailwind CSS
 - Google GenAI SDK
 - Lucide Icons
+
+## Uso local
+
+1. Instala dependencias:
+
+```bash
+npm install
+```
+
+2. Configura la API key de Gemini en un archivo `.env`:
+
+```env
+API_KEY=tu_clave_de_google_aistudio_aqui
+```
+
+3. Ejecuta la app:
+
+```bash
+npm run dev
+```
+
+Abre el enlace local que muestre Vite, normalmente `http://localhost:5173`.
+
+## Seguridad
+
+Nunca subas tu archivo `.env` a GitHub. Verifica antes de publicar cambios que no haya claves privadas en commits, capturas o logs.
