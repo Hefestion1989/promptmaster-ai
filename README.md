@@ -2,6 +2,8 @@
 
 Aplicacion web para perfeccionar prompts con asistencia de IA. Toma ideas simples y las transforma en instrucciones mas claras, especificas y reutilizables para distintos modelos.
 
+**Demo publica:** [hefestion1989.github.io/promptmaster-ai](https://hefestion1989.github.io/promptmaster-ai/)
+
 ## Proposito
 
 PromptMaster AI es la version mas completa del taller de prompts: usa React, Vite y Gemini para generar mejoras, explicar cambios y ofrecer consejos tacticos segun el modelo elegido.
@@ -19,7 +21,9 @@ Para una version estatica, offline y sin API key, mira [`Prompts Workshop`](http
 
 ## Estado del proyecto
 
-Experimental. La demo publica en Cloud Run queda en revision; el proyecto puede evaluarse desde el codigo y ejecutarse localmente.
+Experimental. La demo se publica automaticamente en GitHub Pages desde la rama `main`. Para generar prompts, cada visitante ingresa su propia API key de Gemini.
+
+El repositorio debe usar **Settings > Pages > Source: GitHub Actions**. A partir de ahi, cada cambio integrado en `main` se valida y despliega mediante el workflow incluido.
 
 ## Tecnologias
 
@@ -36,13 +40,7 @@ Experimental. La demo publica en Cloud Run queda en revision; el proyecto puede 
 npm install
 ```
 
-2. Configura la API key de Gemini en un archivo `.env`:
-
-```env
-API_KEY=tu_clave_de_google_aistudio_aqui
-```
-
-3. Ejecuta la app:
+2. Ejecuta la app:
 
 ```bash
 npm run dev
@@ -50,9 +48,17 @@ npm run dev
 
 Abre el enlace local que muestre Vite, normalmente `http://localhost:5173`.
 
+Para validar una modificacion antes de publicarla:
+
+```bash
+npm run check
+```
+
 ## Seguridad
 
-Nunca subas tu archivo `.env` a GitHub. Verifica antes de publicar cambios que no haya claves privadas en commits, capturas o logs.
+La aplicacion pide la API key al abrirse y la conserva solo en memoria durante esa pestana. No la incorpora al bundle, no usa archivos `.env` y no la guarda en el almacenamiento del navegador.
+
+El navegador envia la clave directamente a Google Gemini. Si el proyecto necesitara publicar una clave propia, deberia hacerlo mediante un backend que mantenga el secreto fuera del cliente.
 
 ## Relacion con el portfolio
 

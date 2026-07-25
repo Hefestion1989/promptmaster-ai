@@ -1,9 +1,6 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { TargetModel, OptimizationResult } from "../types";
 
-const apiKey = process.env.API_KEY || "";
-const ai = new GoogleGenAI({ apiKey });
-
 const GENERATION_CONFIG = {
   responseMimeType: "application/json",
   responseSchema: {
@@ -29,11 +26,14 @@ const GENERATION_CONFIG = {
 
 export const optimizePrompt = async (
   inputPrompt: string,
-  targetModel: TargetModel
+  targetModel: TargetModel,
+  apiKey: string,
 ): Promise<OptimizationResult> => {
-  if (!apiKey) {
-    throw new Error("API Key no encontrada. Por favor configura process.env.API_KEY.");
+  const trimmedApiKey = apiKey.trim();
+  if (!trimmedApiKey) {
+    throw new Error("Ingresá una API key de Gemini para optimizar el prompt.");
   }
+  const ai = new GoogleGenAI({ apiKey: trimmedApiKey });
 
   const model = "gemini-2.5-flash"; 
 

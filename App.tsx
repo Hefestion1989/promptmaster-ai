@@ -8,6 +8,7 @@ import { optimizePrompt } from './services/geminiService';
 import { AlertCircle } from 'lucide-react';
 
 const App: React.FC = () => {
+  const [apiKey, setApiKey] = useState('');
   const [selectedModel, setSelectedModel] = useState<TargetModel>(TargetModel.CHATGPT);
   const [inputPrompt, setInputPrompt] = useState('');
   const [loading, setLoading] = useState(false);
@@ -16,13 +17,17 @@ const App: React.FC = () => {
 
   const handleOptimize = async () => {
     if (!inputPrompt.trim()) return;
+    if (!apiKey.trim()) {
+      setError('Ingresá tu API key de Gemini. La clave no se guarda ni se incorpora al sitio.');
+      return;
+    }
 
     setLoading(true);
     setError(null);
     setResult(null);
 
     try {
-      const data = await optimizePrompt(inputPrompt, selectedModel);
+      const data = await optimizePrompt(inputPrompt, selectedModel, apiKey);
       setResult(data);
     } catch (err: any) {
       setError(err.message || 'Ocurrió un error inesperado.');
@@ -49,6 +54,28 @@ const App: React.FC = () => {
             onSelect={setSelectedModel} 
             disabled={loading}
           />
+
+          <div className="mb-6">
+            <label htmlFor="api-key" className="block text-sm font-medium text-zinc-300 mb-2">
+              API key de Gemini
+            </label>
+            <input
+              id="api-key"
+              type="password"
+              autoComplete="off"
+              value={apiKey}
+              onChange={(event) => {
+                setApiKey(event.target.value);
+                if (error) setError(null);
+              }}
+              disabled={loading}
+              placeholder="Pegá tu clave para esta sesión"
+              className="w-full rounded-xl border border-zinc-700 bg-zinc-950 px-4 py-3 text-zinc-100 placeholder:text-zinc-600 focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20 disabled:opacity-50"
+            />
+            <p className="mt-2 text-xs text-zinc-600">
+              Se conserva sólo en la memoria de esta pestaña y se envía directamente a Google Gemini.
+            </p>
+          </div>
 
           <PromptInput 
             value={inputPrompt} 
