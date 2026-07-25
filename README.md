@@ -2,6 +2,8 @@
 
 Aplicacion web para perfeccionar prompts con asistencia de IA. Toma ideas simples y las transforma en instrucciones mas claras, especificas y reutilizables para distintos modelos.
 
+**Demo publica:** [hefestion1989.github.io/promptmaster-ai](https://hefestion1989.github.io/promptmaster-ai/)
+
 ## Proposito
 
 PromptMaster AI es la version mas completa del taller de prompts: usa React, Vite y Gemini para generar mejoras, explicar cambios y ofrecer consejos tacticos segun el modelo elegido.
@@ -19,7 +21,9 @@ Para una version estatica, offline y sin API key, mira [`Prompts Workshop`](http
 
 ## Estado del proyecto
 
-Experimental. La demo publica en Cloud Run queda en revision; el proyecto puede evaluarse desde el codigo y ejecutarse localmente.
+Experimental. La demo se publica automaticamente en GitHub Pages desde la rama `main`. Para generar prompts, cada visitante ingresa su propia API key de Gemini.
+
+El repositorio debe usar **Settings > Pages > Source: GitHub Actions**. A partir de ahi, cada cambio integrado en `main` se valida y despliega mediante el workflow incluido.
 
 ## Tecnologias
 
@@ -43,6 +47,12 @@ npm run dev
 ```
 
 Abre el enlace local que muestre Vite, normalmente `http://localhost:5173`.
+
+Para validar una modificacion antes de publicarla:
+
+```bash
+npm run check
+```
 
 ## Seguridad
 
