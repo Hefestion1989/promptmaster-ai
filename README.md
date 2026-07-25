@@ -36,13 +36,7 @@ Experimental. La demo publica en Cloud Run queda en revision; el proyecto puede 
 npm install
 ```
 
-2. Configura la API key de Gemini en un archivo `.env`:
-
-```env
-API_KEY=tu_clave_de_google_aistudio_aqui
-```
-
-3. Ejecuta la app:
+2. Ejecuta la app:
 
 ```bash
 npm run dev
@@ -52,7 +46,9 @@ Abre el enlace local que muestre Vite, normalmente `http://localhost:5173`.
 
 ## Seguridad
 
-Nunca subas tu archivo `.env` a GitHub. Verifica antes de publicar cambios que no haya claves privadas en commits, capturas o logs.
+La aplicacion pide la API key al abrirse y la conserva solo en memoria durante esa pestana. No la incorpora al bundle, no usa archivos `.env` y no la guarda en el almacenamiento del navegador.
+
+El navegador envia la clave directamente a Google Gemini. Si el proyecto necesitara publicar una clave propia, deberia hacerlo mediante un backend que mantenga el secreto fuera del cliente.
 
 ## Relacion con el portfolio
 
