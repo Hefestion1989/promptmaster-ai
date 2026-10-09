@@ -63,3 +63,7 @@ El navegador envia la clave directamente a Google Gemini. Si el proyecto necesit
 ## Relacion con el portfolio
 
 PromptMaster AI es la version avanzada del taller de prompts. El mapa general esta en [`portfolio-proyectos`](https://github.com/Hefestion1989/portfolio-proyectos).
+
+## Build para ChatGPT Sites
+
+`npm ci && npm run build:sites` genera `dist/` con rutas desde la raíz y metadatos de Sites. `npm run build` sigue preparando GitHub Pages. Esta versión todavía usa Gemini y la API key que ingresa cada visitante. La publicación requiere vincular este repositorio a un proyecto de Sites.
